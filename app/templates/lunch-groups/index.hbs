@@ -1,0 +1,6 @@
+<ul>
+  {{#each model as |lunchGroup|}}
+  <li>{{#link-to "lunch-groups.lunch-group" lunchGroup}} {{lunchGroup.name}} {{/link-to}}</li>
+  {{/each}}
+</ul>
+{{#link-to "lunch-groups.new"}}New Lunch Group{{/link-to}}
