@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend({
-  model(params) {
-    return {title: "Tacos", imageUrl: "http://s3-media4.fl.yelpcdn.com/bphoto/J_SZToJQ61vNQIcabfXCaw/o.jpg"};
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
+  model: function(params) {
+    return this.get("store").findRecord("Lunch", params.lunch_id);
   }
 });
