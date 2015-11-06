@@ -45,17 +45,28 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV['torii'] = {
+      providers: {
+        'google-token': {
+          apiKey: '620208096788-428uk54o24k1a4sk4o1a78279r8tjaq7.apps.googleusercontent.com',
+          scope: 'profile email',
+          redirectUri: 'http://lunch-detective.herokuapp.com'
+        }
+      }
+    };
+
+  } else {
+    ENV['torii'] = {
+      providers: {
+        'google-token': {
+          apiKey: '620208096788-428uk54o24k1a4sk4o1a78279r8tjaq7.apps.googleusercontent.com',
+          scope: 'profile email',
+          redirectUri: 'http://localhost:4200'
+        }
+      }
+    };
 
   }
-  ENV['torii'] = {
-    providers: {
-      'google-token': {
-        apiKey: '620208096788-428uk54o24k1a4sk4o1a78279r8tjaq7.apps.googleusercontent.com',
-        scope: 'profile email',
-        redirectUri: 'http://localhost:4200'
-      }
-    }
-  };
 
   return ENV;
 };
