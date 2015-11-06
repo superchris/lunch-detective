@@ -5,7 +5,7 @@ import {Socket} from '../phoenix';
 export default Ember.Service.extend({
 
   connect: function(channel, topic, initialPayload={}){
-    let socket = new Socket("ws://localhost:4000/socket");
+    let socket = new Socket("ws://lunch-detective-server.herokuapp.com/socket");
     socket.connect();
     let chan = socket.channel(`${channel}:${topic}`, initialPayload);
 
