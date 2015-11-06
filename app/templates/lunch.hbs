@@ -3,7 +3,7 @@ Sound good?
 <img src={{model.url}} />
 {{model.accepted}}
 <button {{action "createVote" true}}>Yes!</button><button {{action "createVote" false}}>Nope.</button>
-<p>Logged in as {{session.content.secure.userName}} {{session.content.secure.userEmail}}</p>
+<p>Logged in as {{user.userName}} {{user.userEmail}}</p>
 Votes so far:
 <ul>
 {{#each model.votes as |vote|}}

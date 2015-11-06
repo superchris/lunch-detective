@@ -47,6 +47,10 @@ var GoogleToken = Oauth2Bearer.extend({
 
         return Ember.$.get("https://www.googleapis.com/plus/v1/people/me", {access_token: authData.token}).then(function(user){
 					console.log(user);
+					window.googleUser = {
+						userName: user.displayName,
+            userEmail: user.emails[0].value
+					};
           return {
             userName: user.displayName,
             userEmail: user.emails[0].value,
