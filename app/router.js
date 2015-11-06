@@ -6,7 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('lunch', {path: "/lunches/:lunch_id"});
+  this.route('lunches', {path: "/lunches"}, function() {
+    this.route("lunch", {path: "/:lunch_id"});
+  });
+
   this.route('lunch-groups', function() {
     this.route("new");
     this.route("lunch-group", {path: "/:lunch_group_id"}, function() {

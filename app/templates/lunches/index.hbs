@@ -1,0 +1,7 @@
+Lunches:
+<ul>
+  {{#each model as |lunch|}}
+  <li>{{#link-to "lunches.lunch" lunch}}{{lunch.title}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+{{outlet}}

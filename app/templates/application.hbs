@@ -1,19 +1,10 @@
 <ul>
-	<li>
-		{{#if session.isAuthenticated}}
-		  <a {{ action 'invalidateSession' }}>Logout</a>
-			<li>{{#link-to 'lunch' 7}}Lunch{{/link-to}}</li>
-		{{else}}
-		  {{#link-to 'login'}}Login{{/link-to}}
-		{{/if}}
-	</li>
-</ul>
-
-Lunches:
-<ul>
-  {{#each model as |lunch|}}
-  <li>{{#link-to "lunch" lunch}}{{lunch.title}}{{/link-to}}</li>
-  {{/each}}
+	{{#if session.isAuthenticated}}
+	  <li><a {{ action 'invalidateSession' }}>Logout</a></li>
+		<li>{{#link-to 'lunches'}}Lunches{{/link-to}}</li>
+	{{else}}
+	  <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+	{{/if}}
 </ul>
 
 {{outlet}}

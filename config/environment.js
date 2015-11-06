@@ -44,6 +44,10 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: '/lunches'
+  };
+
   if (environment === 'production') {
     ENV['torii'] = {
       providers: {

@@ -6,6 +6,5 @@ export default Ember.Route.extend({
 			this.get('session').authenticate('simple-auth-authenticator:torii', 'google-token');
 			return;
 		}
-	}
-
+	},
 });
