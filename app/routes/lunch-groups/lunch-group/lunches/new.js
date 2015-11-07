@@ -10,7 +10,7 @@ export default Ember.Route.extend({
       var lunchGroup = this.modelFor("lunch-groups.lunch-group");
       this.currentModel.set("lunchGroup", lunchGroup);
       this.currentModel.save().then( () => {
-        this.transitionTo("lunch", this.currentModel);
+        this.transitionTo("lunches.lunch", this.currentModel);
       });
     }
   }

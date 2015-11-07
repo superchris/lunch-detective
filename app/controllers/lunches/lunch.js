@@ -5,8 +5,8 @@ export default Ember.Controller.extend({
     createVote(yesNo) {
       var vote = this.get("store").createRecord("vote", {
         yesNo: yesNo,
-        name: this.get("session.content.secure.userName"),
-        email: this.get("session.content.secure.userEmail"),
+        name: this.get("user.userName"),
+        email: this.get("user.userEmail"),
       });
       vote.set("lunch", this.get("model"));
       vote.save();
