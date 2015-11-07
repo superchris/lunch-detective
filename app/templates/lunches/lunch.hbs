@@ -1,7 +1,9 @@
+
+<p>
+  {{model.recommendation}}<br/>
+  <img src={{model.url}} />
+</p>
 Sound good?
-{{model.recommendation}}<br/>
-<img src={{model.url}} />
-{{model.accepted}}
 <button {{action "createVote" true}}>Yes!</button><button {{action "createVote" false}}>Nope.</button>
 <p>Logged in as {{user.userName}} {{user.userEmail}}</p>
 Votes so far:
